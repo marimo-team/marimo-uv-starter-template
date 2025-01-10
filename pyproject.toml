@@ -26,3 +26,14 @@ select = [
   "I", # isort
   "B", # flake8-bugbear
 ]
+
+[tool.marimo.ai]
+rules = "- prefer polars over pandas\n- make charts using altair"
+
+[tool.marimo.save]
+autosave = "after_delay"
+autosave_delay = 1000
+format_on_save = true
+
+[tool.marimo.package_management]
+manager = "uv"
