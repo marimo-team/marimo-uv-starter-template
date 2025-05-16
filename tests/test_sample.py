@@ -1,4 +1,4 @@
-from src.utils import add, subtract
+from utils import add, subtract
 
 
 def test_add():

@@ -9,10 +9,11 @@ dev = [
   "pre-commit>=4.0.1",
   "pytest>=8.3.4",
   "ruff>=0.8.3",
+  "marimo>=0.13.10",
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["."]
+pythonpath = ["./src"]
 testpaths = ["tests", "marimo_template"]
 
 [tool.ruff]
@@ -37,3 +38,6 @@ format_on_save = true
 
 [tool.marimo.package_management]
 manager = "uv"
+
+[tool.marimo.runtime]
+pythonpath = ["./src"]

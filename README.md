@@ -39,7 +39,7 @@ A starter template for [marimo](https://marimo.io) notebooks using [uv](https://
 # Run testing in your regular python files
 uv run pytest tests
 # Running testing in your marimo notebooks
-uv run pytest src
+uv run pytest notebooks
 ```
 
 ### Linting and formatting
