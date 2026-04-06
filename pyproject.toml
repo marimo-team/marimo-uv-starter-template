@@ -1,8 +1,13 @@
 [project]
 description = "A starter template for marimo notebooks with uv"
-name = "marimo-template"
-requires-python = ">=3.12"
+name = "marimo_uv_starter_template"
+requires-python = ">=3.14"
 version = "0.1.0"
+dependencies = [
+    "marimo>=0.19.7",
+    "ruff>=0.14.14",
+    "ty>=0.0.14",
+]
 
 [dependency-groups]
 dev = [
@@ -14,11 +19,13 @@ dev = [
 
 [tool.pytest.ini_options]
 pythonpath = ["./src"]
-testpaths = ["tests", "marimo_template"]
+testpaths = ["tests", "notebooks"]
+python_files =["test_*.py", "*_test.py", "*.py"]
+#python_functions = ["test_*"]
 
 [tool.ruff]
 line-length = 100
-target-version = "py312"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = [
@@ -26,7 +33,9 @@ select = [
   "F", # pyflakes
   "I", # isort
   "B", # flake8-bugbear
+  "W", "UP", "B", "C4", "S", "COM", "RUF",
 ]
+ignore = ["COM812", "S101"]
 
 [tool.marimo.ai]
 rules = "- prefer polars over pandas\n- make charts using altair"
@@ -41,3 +50,36 @@ manager = "uv"
 
 [tool.marimo.runtime]
 pythonpath = ["./src"]
+
+# Language server configuration
+[tool.marimo.language_servers.pylsp]
+enabled = false                 # Enable/disable the Python language server
+enable_mypy = false             # Type checking with mypy (enabled by default, if installed)
+enable_ruff = true              # Linting with ruff (enabled by default, if installed)
+enable_flake8 = false           # Linting with flake8
+enable_pydocstyle = false       # Check docstring style
+enable_pylint = false           # Linting with pylint
+enable_pyflakes = false         # Syntax checking with pyflakes
+enable_ty = true                # Type checking with ty
+
+# Diagnostics configuration
+[tool.marimo.diagnostics]
+enabled = true
+
+[tool.ty.environment]
+extra-paths = ["./src"]
+python-version = "3.14"
+
+[tool.ty.src]
+include = ["./src"]
+
+[build-system]
+requires = ["uv_build"]
+build-backend = "uv_build"
+
+[tool.uv]
+package=false # do not create a package, only run the script
+
+[tool.uv.build-backend]
+#module-root = "src"
+module-name = "marimo_template" # module name is different than package/project folder name

@@ -4,7 +4,7 @@ A starter template for [marimo](https://marimo.io) notebooks using [uv](https://
 
 ## Features
 
-- 🚀 Python 3.12+ support
+- 🚀 Python 3.14+ support
 - 📦 Fast dependency management with `uv`
 - 🧪 Testing setup with pytest
 - 🎯 Code quality with Ruff (linting + formatting)
@@ -13,7 +13,7 @@ A starter template for [marimo](https://marimo.io) notebooks using [uv](https://
 
 ## Prerequisites
 
-- Python 3.12 or higher
+- Python 3.14 or higher
 - [uv](https://github.com/astral-sh/uv) installed
 
 ## Getting Started
@@ -29,6 +29,20 @@ A starter template for [marimo](https://marimo.io) notebooks using [uv](https://
 
    ```bash
    uv run marimo edit
+   ```
+
+3. Run the notebooks:
+
+   ```bash
+   uv run marimo run notebooks/app.py
+   uv run marimo run notebooks/notebook.py
+   ```
+
+4. Run the notebooks as scripts:
+
+   ```bash
+   uv run notebooks/app.py
+   uv run notebooks/notebook.py
    ```
 
 ## Development

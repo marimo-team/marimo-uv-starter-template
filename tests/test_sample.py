@@ -1,4 +1,4 @@
-from utils import add, subtract
+from marimo_template.utils import add, subtract
 
 
 def test_add():

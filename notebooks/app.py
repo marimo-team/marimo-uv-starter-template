@@ -9,12 +9,13 @@ def _():
     import marimo as mo
 
     mo.md("Hello")
+    print("hello script app")
     return (mo,)
 
 
 @app.cell
 def test_cell():
-    from utils import add
+    from marimo_template.utils import add
 
     assert add(1, 2) == 3
     assert 2 == 2

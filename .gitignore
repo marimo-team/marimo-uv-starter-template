@@ -11,3 +11,6 @@ wheels/
 
 # IDE
 !.vscode/
+
+# others
+__marimo__
